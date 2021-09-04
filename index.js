@@ -26,17 +26,15 @@ const start = () => {
    const timerID = setInterval(() =>
     body.style.backgroundColor = randomIntegerFromInterval(colors)
     , 1000);
-    buttonStart.isActive = true;
+    buttonStart.disabled = true;
     console.log(timerID);
-    return timerID;
-    
+      
 }
-const ID = timerID;
-console.log(ID);
+
 // // Создаю функцию, которая останавливает генерацию рандомного цвета
 const stop = () => {
-    clearInterval(ID);
-    buttonStart.isActive = false;
+    clearInterval(timerID);
+    buttonStart.disabled = false;
     console.log(stop);
 }
 
