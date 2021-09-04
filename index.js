@@ -15,37 +15,38 @@ const body = document.querySelector('body');
 
 
 
-// Вешаю слушателя на кнопки 
-buttonStart.addEventListener('click', start);
-    
 
 // // Создаю функцию генерации рандомного цвета
 const randomIntegerFromInterval = (colors) => {
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
-// Создаю функцию интервал с которым будет меняться цвет фона и присваиваю BODY инлайновый стиль
-function start () {
-    const timerId = setInterval(() => {
-        body.style.backgroundColor = randomIntegerFromInterval(colors);
-        console.log('switch');
-    }, 1000)
-    return timerId;
-};
-const id = timerId;
-// Создаю функцию, которая останавливает генерацию рандомного цвета
-function stop () {
-    clearInterval(id);
-    console.log(clearInterval);
-};
+// // Создаю функцию интервал с которым будет меняться цвет фона и присваиваю BODY инлайновый стиль
+const start = () => {
+   const timerID = setInterval(() =>
+    body.style.backgroundColor = randomIntegerFromInterval(colors)
+    , 1000);
+    buttonStart.isActive = true;
+    console.log(timerID);
+    return timerID;
     
+}
+const ID = timerID;
+console.log(ID);
+// // Создаю функцию, которая останавливает генерацию рандомного цвета
+const stop = () => {
+    clearInterval(ID);
+    buttonStart.isActive = false;
+    console.log(stop);
+}
+
+// Вешаю слушателя на кнопки 
+buttonStart.addEventListener('click', start);
+buttonStop.addEventListener('click', stop);
 
 
 
-
-
-
-
+    
 
 
 
