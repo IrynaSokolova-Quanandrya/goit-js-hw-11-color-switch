@@ -21,15 +21,16 @@ const randomIntegerFromInterval = (colors) => {
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
+let timerID = '';
 // // Создаю функцию интервал с которым будет меняться цвет фона и присваиваю BODY инлайновый стиль
 const start = () => {
-   const timerID = setInterval(() =>
-    body.style.backgroundColor = randomIntegerFromInterval(colors)
-    , 1000);
+   timerID = setInterval(() =>
+    body.style.backgroundColor = randomIntegerFromInterval(colors), 1000);
+    
     buttonStart.disabled = true;
     console.log(timerID);
-      
 }
+
 
 // // Создаю функцию, которая останавливает генерацию рандомного цвета
 const stop = () => {
